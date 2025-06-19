@@ -1,0 +1,230 @@
+/* Custom styles to match the reference image */
+
+/* Sidebar Layout */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background: #1a1a1a;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+
+.sidebar-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    margin: 0 auto 1.5rem;
+    display: block;
+    object-fit: cover;
+}
+
+.profile-section h1 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.job-title {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Contact Info */
+.contact-info {
+    margin: 2rem 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Social Section */
+.social-section {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+}
+
+.social-section h3 {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    color: var(--text-light);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2a2a2a;
+}
+
+.social-icon:hover {
+    background: var(--primary-color);
+    color: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+    
+    .sidebar-content {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Certifications grid */
+.certifications-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.certification-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    background: #2a2a2a;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.certification-logo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline adjustments */
+.timeline-item {
+    margin-bottom: 2rem;
+    position: relative;
+    padding-left: 2.5rem;
+}
+
+.timeline-item::before {
+    left: 0.5rem;
+    top: 0.5rem;
+}
+
+.timeline-year {
+    position: absolute;
+    left: -6.5rem;
+    top: 0;
+    width: 6rem;
+    text-align: right;
+}
+
+/* Skills grid adjustments */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.skill-category {
+    background: #2a2a2a;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+.skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-category li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skill-category li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .timeline-year {
+        position: static;
+        text-align: left;
+        width: auto;
+        margin-bottom: 0.5rem;
+        display: block;
+    }
+    
+    .sidebar {
+        padding: 2rem 1rem;
+    }
+    
+    .main-content {
+        padding: 1rem;
+    }
+}

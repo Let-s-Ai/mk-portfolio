@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <!-- About Me Section -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <p>Hi, my name is Merabi Kikalishvili</p>
+        <p>I'm a proactive and detail-oriented individual with over 5 years of
+            experience in the IT field, driven by a strong passion for continuous
+            learning and improvement. I excel in solving problems and pay close
+            attention to detail, ensuring successful outcomes in every endeavor. In my
+            free time, I dive into the latest tech trends, staying up-to-date with industry
+            developments.
+        </p> 
+        <p>As a team player, I'm enthusiastic about giving my best to each project,
+            fostering successful collaboration and achievement. Let's connect and
+            explore new opportunities together!</p>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="technical-skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+            <!-- Operating Systems -->
+            <div class="skill-card">
+                <i class="fas fa-desktop"></i>
+                <h3>Operating Systems</h3>
+                <p>Experienced in administering Windows, Linux, and macOS environments. Skilled in system setup, configuration, and maintenance across platforms to ensure performance and reliability.</p>
+            </div>
+            
+            <!-- Networking -->
+            <div class="skill-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>Networking</h3>
+                <p>Proficient in configuring and troubleshooting LAN, WAN, and VPN networks. Skilled in network protocols, routing, and hardware for secure, efficient communication.</p>
+            </div>
+            
+            <!-- Cloud Technologies -->
+            <div class="skill-card">
+                <i class="fab fa-aws"></i>
+                <h3>Cloud Technologies</h3>
+                <p>Specialized in AWS services. Experienced in provisioning, configuring, and managing scalable cloud infrastructure to support high-availability applications.</p>
+            </div>
+            
+            <!-- Infrastructure as Code -->
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Infrastructure as Code</h3>
+                <p>Skilled in using <strong>Terraform</strong> to define and provision infrastructure as code. Capable of managing cloud resources with repeatable, version-controlled configurations.</p>
+            </div>
+            
+            <!-- Containerization & Orchestration -->
+            <div class="skill-card">
+                <i class="fab fa-docker"></i>
+                <h3>Containerization & Orchestration</h3>
+                <p>Proficient in <strong>Docker</strong> for containerizing applications and <strong>Kubernetes</strong> for managing container clusters. Experienced in building scalable and fault-tolerant systems.</p>
+            </div>
+            
+            <!-- CI/CD Pipelines -->
+            <div class="skill-card">
+                <i class="fas fa-sync-alt"></i>
+                <h3>CI/CD Pipelines</h3>
+                <p>Experienced in designing and maintaining CI/CD workflows using <strong>Jenkins</strong> and <strong>GitHub Actions</strong>. Skilled in automating build, test, and deployment stages for efficient delivery.</p>
+            </div>
+            
+            <!-- Programming Languages -->
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Programming Languages</h3>
+                <p>Proficient in <strong>Python</strong>, <strong>Bash</strong>, and <strong>C#</strong>. Used in various projects for automation, web development (Flask), scripting, and system administration.</p>
+            </div>
+            
+            <!-- Version Control -->
+            <div class="skill-card">
+                <i class="fab fa-git-alt"></i>
+                <h3>Version Control</h3>
+                <p>Experienced with <strong>Git</strong> for source control and collaboration. Familiar with branching strategies, conflict resolution, and repository management in team environments.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Courses, Workshops, and Certifications -->
+    <section id="certifications" class="section">
+        <h2 class="section-title">Courses, Workshops, and Certifications</h2>
+        <div class="certifications-grid">
+            <img src="{{ url_for('static', filename='images/cert1.png') }}" alt="Certification 1" class="certification-logo">
+            <img src="{{ url_for('static', filename='images/cert2.png') }}" alt="Certification 2" class="certification-logo">
+            <img src="{{ url_for('static', filename='images/cert3.png') }}" alt="Certification 3" class="certification-logo">
+        </div>
+    </section>
+{% endblock %}
