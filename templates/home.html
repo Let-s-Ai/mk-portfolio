@@ -16,7 +16,7 @@
             fostering successful collaboration and achievement. Let's connect and
             explore new opportunities together!</p>
     </section>
-
+    
     <!-- Technical Skills Section -->
     <section id="technical-skills" class="section">
         <h2 class="section-title">Technical Skills</h2>
@@ -28,7 +28,9 @@
                 <p>Experienced in administering Windows, Linux, and macOS environments. Skilled in system setup, configuration, and maintenance across platforms to ensure performance and reliability.</p>
             </div>
             
-            <!-- Networking -->
+            <!-- N
+             
+            etworking -->
             <div class="skill-card">
                 <i class="fas fa-network-wired"></i>
                 <h3>Networking</h3>
@@ -78,13 +80,52 @@
             </div>
         </div>
     </section>
-    <!-- Courses, Workshops, and Certifications -->
-    <section id="certifications" class="section">
-        <h2 class="section-title">Courses, Workshops, and Certifications</h2>
-        <div class="certifications-grid">
-            <img src="{{ url_for('static', filename='images/cert1.png') }}" alt="Certification 1" class="certification-logo">
-            <img src="{{ url_for('static', filename='images/cert2.png') }}" alt="Certification 2" class="certification-logo">
-            <img src="{{ url_for('static', filename='images/cert3.png') }}" alt="Certification 3" class="certification-logo">
+    
+    <!-- Certifications Carousel -->
+    <section class="py-12 bg-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-primary mb-2">My Certifications</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+            </div>
+            
+            {% set certs = [
+                {
+                    'title': 'AWS Certified Solutions Architect',
+                    'subtitle': 'Amazon Web Services',
+                    'description': 'Demonstrated expertise in designing distributed systems on AWS.',
+                    'icon': 'fab fa-aws',
+                },
+                {
+                    'title': 'Certified Kubernetes Administrator',
+                    'subtitle': 'Cloud Native Computing Foundation',
+                    'description': 'Validated skills in Kubernetes cluster management and application deployment.',
+                    'icon': 'fas fa-dharmachakra',
+                },
+                {
+                    'title': 'Microsoft Certified: Azure Administrator',
+                    'subtitle': 'Microsoft',
+                    'description': 'Proven ability to manage Azure resources and implement security controls.',
+                    'icon': 'fab fa-microsoft',
+                },
+                {
+                    'title': 'Certified Information Systems Security Professional',
+                    'subtitle': '(ISC)²',
+                    'description': 'Validated expertise in IT security and risk management.',
+                    'icon': 'fas fa-shield-alt',
+                },
+                {
+                    'title': 'Google Cloud Professional',
+                    'subtitle': 'Google Cloud',
+                    'description': 'Demonstrated ability to design and manage Google Cloud solutions.',
+                    'icon': 'fab fa-google',
+                }
+            ] %}
+            
+            {% with certifications=certs %}
+                {% include 'components/card_carousel.html' %}
+            {% endwith %}
         </div>
     </section>
+
 {% endblock %}
