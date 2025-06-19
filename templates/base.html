@@ -54,17 +54,26 @@
                 </div>
             </div>
             
-            <div class="social-section">
-                <h3>MY LINKS</h3>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/merabi-kikalishvili/" target="_blank" class="social-icon" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
+            <div class="mt-8 text-center">
+                <h3 class="text-lg font-medium text-gray-300 mb-4 border-b border-gray-700 pb-2">My Links</h3>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://www.linkedin.com/in/merabi-kikalishvili/" target="_blank" 
+                       class="text-primary hover:text-yellow-400 transition-all duration-300 transform hover:-translate-y-1 hover:scale-110"
+                       title="LinkedIn"
+                       aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in text-xl"></i>
                     </a>
-                    <a href="https://github.com/orgs/Let-s-Ai/repositories" target="_blank" class="social-icon" title="GitHub">
-                        <i class="fab fa-github"></i>
+                    <a href="https://github.com/orgs/Let-s-Ai/repositories" target="_blank" 
+                       class="text-primary hover:text-yellow-400 transition-all duration-300 transform hover:-translate-y-1 hover:scale-110"
+                       title="GitHub"
+                       aria-label="GitHub Profile">
+                        <i class="fab fa-github text-xl"></i>
                     </a>
-                    <a href="https://www.credly.com/users/merabi-kikalishvili" target="_blank" class="social-icon" title="Credly">
-                        <i class="fas fa-award"></i>
+                    <a href="https://www.credly.com/users/merabi-kikalishvili" target="_blank" 
+                       class="text-primary hover:text-yellow-400 transition-all duration-300 transform hover:-translate-y-1 hover:scale-110"
+                       title="Credly"
+                       aria-label="Credly Badges">
+                        <i class="fas fa-award text-xl"></i>
                     </a>
                 </div>
             </div>
@@ -74,9 +83,27 @@
     <!-- Main Content -->
     <main class="main-content">
         <!-- Navigation -->
-        <nav class="nav-menu">
-            <a href="about">About</a>
-            <a href="resume">Resume</a>
+        <nav class="mb-8">
+            <ul class="flex justify-center space-x-8">
+                <li>
+                    <a href="{{ url_for('home') }}" 
+                       class="relative text-gray-300 hover:text-primary transition-colors duration-200 font-medium text-lg group"
+                       {% if request.path == url_for('home') %}data-active="true"{% endif %}>
+                        Home
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-data-[active=true]:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('resume') }}" 
+                       class="relative text-gray-300 hover:text-primary transition-colors duration-200 font-medium text-lg group"
+                       {% if request.path == url_for('resume') %}data-active="true"{% endif %}>
+                        Resume
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-data-[active=true]:w-full"></span>
+                    </a>
+                </li>
+            </ul>
         </nav>
 
         {% with messages = get_flashed_messages(with_categories=true) %}

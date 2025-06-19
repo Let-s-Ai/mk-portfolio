@@ -1,6 +1,6 @@
 <!-- Card Carousel Component -->
 {% if certifications %}
-<div class="relative w-full overflow-hidden">
+<div class="relative w-full overflow-hidden group">
     <div class="swiper-container w-full max-w-full">
         <div class="swiper-wrapper">
             {% for item in certifications %}
@@ -29,9 +29,9 @@
             {% endfor %}
         </div>
         
-        <!-- Navigation Buttons -->
-        <div class="swiper-button-next text-primary hover:text-yellow-400 transition-colors"></div>
-        <div class="swiper-button-prev text-primary hover:text-yellow-400 transition-colors"></div>
+        <!-- Navigation Buttons - Hidden by default, shown on hover -->
+        <div class="swiper-button-next opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-dark-card/80 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90"></div>
+        <div class="swiper-button-prev opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-dark-card/80 backdrop-blur-sm rounded-full w-10 h-10 flex items-center justify-center hover:bg-primary/90"></div>
         
         <!-- Pagination -->
         <div class="swiper-pagination mt-6"></div>
@@ -87,6 +87,21 @@
 .swiper-button-next,
 .swiper-button-prev {
     color: #ffd700 !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: -20px !important;
+    transition: all 0.3s ease !important;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: scale(1.1);
 }
 
 .swiper-pagination-bullet {
@@ -101,7 +116,7 @@
 
 .swiper-slide {
     height: auto;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .swiper-container {
