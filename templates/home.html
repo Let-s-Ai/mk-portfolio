@@ -2,82 +2,94 @@
 
 {% block content %}
     <!-- About Me Section -->
-    <section id="about" class="section">
-        <h2 class="section-title">About Me</h2>
-        <p>Hi, my name is Merabi Kikalishvili</p>
-        <p>I'm a proactive and detail-oriented individual with over 5 years of
-            experience in the IT field, driven by a strong passion for continuous
-            learning and improvement. I excel in solving problems and pay close
-            attention to detail, ensuring successful outcomes in every endeavor. In my
-            free time, I dive into the latest tech trends, staying up-to-date with industry
-            developments.
-        </p> 
-        <p>As a team player, I'm enthusiastic about giving my best to each project,
-            fostering successful collaboration and achievement. Let's connect and
-            explore new opportunities together!</p>
+    <section id="about" class="py-16 bg-dark-800">
+        <div class="container mx-auto px-4">
+            <div class="bg-dark-card p-8 rounded-lg shadow-lg transform transition-all duration-300 hover:shadow-xl">
+                <p class="text-2xl font-medium text-center text-gray-200 mb-8 leading-relaxed">
+                    Hi, my name is <span class="text-primary font-semibold">Merabi Kikalishvili</span>
+                </p>
+                <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
+                    <p class="text-justify">
+                        I'm a proactive and detail-oriented IT professional with over 5 years of experience, 
+                        driven by a strong passion for continuous learning and improvement. I excel in problem-solving 
+                        and pay close attention to detail, ensuring successful outcomes in every endeavor.
+                    </p>
+                    <p class="text-justify">
+                        In my free time, I stay current with the latest tech trends and industry developments, 
+                        always looking to expand my knowledge and skills. As a dedicated team player, I'm 
+                        enthusiastic about contributing my best to each project, fostering successful 
+                        collaboration and achievement.
+                    </p>
+                    <p class="text-center text-xl text-primary font-medium mt-8">
+                        Let's connect and explore new opportunities together!
+                    </p>
+                </div>
+            </div>
+        </div>
     </section>
     
-    <!-- Technical Skills Section -->
-    <section id="technical-skills" class="section">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <!-- Operating Systems -->
-            <div class="skill-card">
-                <i class="fas fa-desktop"></i>
-                <h3>Operating Systems</h3>
-                <p>Experienced in administering Windows, Linux, and macOS environments. Skilled in system setup, configuration, and maintenance across platforms to ensure performance and reliability.</p>
+    <!-- Technical Skills Carousel -->
+    <section id="technical-skills" class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-primary mb-2">Technical Skills</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
             </div>
             
-            <!-- N
-             
-            etworking -->
-            <div class="skill-card">
-                <i class="fas fa-network-wired"></i>
-                <h3>Networking</h3>
-                <p>Proficient in configuring and troubleshooting LAN, WAN, and VPN networks. Skilled in network protocols, routing, and hardware for secure, efficient communication.</p>
-            </div>
+            {% set skills = [
+                {
+                    'title': 'Operating Systems',
+                    'subtitle': 'System Administration',
+                    'description': 'Experienced in administering Windows, Linux, and macOS environments. Skilled in system setup, configuration, and maintenance across platforms to ensure performance and reliability.',
+                    'icon': 'fas fa-desktop',
+                },
+                {
+                    'title': 'Networking',
+                    'subtitle': 'Network Administration',
+                    'description': 'Proficient in network configuration, troubleshooting, and security. Experience with TCP/IP, DNS, DHCP, VPN, and network monitoring tools.',
+                    'icon': 'fas fa-network-wired',
+                },
+                {
+                    'title': 'Cloud Technologies',
+                    'subtitle': 'Cloud Computing',
+                    'description': 'Hands-on experience with AWS, Azure, and Google Cloud Platform. Skilled in deploying and managing cloud infrastructure and services.',
+                    'icon': 'fas fa-cloud',
+                },
+                {
+                    'title': 'Containerization',
+                    'subtitle': 'Docker & Kubernetes',
+                    'description': 'Experience with containerization using Docker and orchestration with Kubernetes for scalable and efficient application deployment.',
+                    'icon': 'fab fa-docker',
+                },
+                {
+                    'title': 'CI/CD',
+                    'subtitle': 'DevOps Practices',
+                    'description': 'Proficient in implementing CI/CD pipelines using tools like Jenkins, GitHub Actions, and GitLab CI for automated testing and deployment.',
+                    'icon': 'fas fa-code-branch',
+                },
+                {
+                    'title': 'Scripting',
+                    'subtitle': 'Automation',
+                    'description': 'Skilled in scripting with Bash, Python, and PowerShell to automate repetitive tasks and improve system efficiency.',
+                    'icon': 'fas fa-terminal',
+                },
+                {
+                    'title': 'Version Control',
+                    'subtitle': 'Git & GitHub/GitLab',
+                    'description': 'Proficient in version control using Git, with experience in collaborative development workflows on GitHub and GitLab.',
+                    'icon': 'fab fa-git-alt',
+                },
+                {
+                    'title': 'Security',
+                    'subtitle': 'Cybersecurity',
+                    'description': 'Knowledge of security best practices, vulnerability assessment, and implementation of security measures to protect systems and data.',
+                    'icon': 'fas fa-shield-alt',
+                }
+            ] %}
             
-            <!-- Cloud Technologies -->
-            <div class="skill-card">
-                <i class="fab fa-aws"></i>
-                <h3>Cloud Technologies</h3>
-                <p>Specialized in AWS services. Experienced in provisioning, configuring, and managing scalable cloud infrastructure to support high-availability applications.</p>
-            </div>
-            
-            <!-- Infrastructure as Code -->
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Infrastructure as Code</h3>
-                <p>Skilled in using <strong>Terraform</strong> to define and provision infrastructure as code. Capable of managing cloud resources with repeatable, version-controlled configurations.</p>
-            </div>
-            
-            <!-- Containerization & Orchestration -->
-            <div class="skill-card">
-                <i class="fab fa-docker"></i>
-                <h3>Containerization & Orchestration</h3>
-                <p>Proficient in <strong>Docker</strong> for containerizing applications and <strong>Kubernetes</strong> for managing container clusters. Experienced in building scalable and fault-tolerant systems.</p>
-            </div>
-            
-            <!-- CI/CD Pipelines -->
-            <div class="skill-card">
-                <i class="fas fa-sync-alt"></i>
-                <h3>CI/CD Pipelines</h3>
-                <p>Experienced in designing and maintaining CI/CD workflows using <strong>Jenkins</strong> and <strong>GitHub Actions</strong>. Skilled in automating build, test, and deployment stages for efficient delivery.</p>
-            </div>
-            
-            <!-- Programming Languages -->
-            <div class="skill-card">
-                <i class="fas fa-code"></i>
-                <h3>Programming Languages</h3>
-                <p>Proficient in <strong>Python</strong>, <strong>Bash</strong>, and <strong>C#</strong>. Used in various projects for automation, web development (Flask), scripting, and system administration.</p>
-            </div>
-            
-            <!-- Version Control -->
-            <div class="skill-card">
-                <i class="fab fa-git-alt"></i>
-                <h3>Version Control</h3>
-                <p>Experienced with <strong>Git</strong> for source control and collaboration. Familiar with branching strategies, conflict resolution, and repository management in team environments.</p>
-            </div>
+            {% with certifications=skills %}
+                {% include 'components/card_carousel.html' %}
+            {% endwith %}
         </div>
     </section>
     
@@ -91,34 +103,100 @@
             
             {% set certs = [
                 {
-                    'title': 'AWS Certified Solutions Architect',
+                    'title': 'ITVET – Qualification in Computer Network and Systems',
+                    'subtitle': 'ITVET',
+                    'description': 'Professional qualification in computer networking and systems administration.',
+                    'icon': 'fas fa-network-wired',
+                },
+                {
+                    'title': 'CISCO – IT Essentials',
+                    'subtitle': 'CISCO Networking Academy',
+                    'description': 'Fundamental PC and mobile device skills, basic networking, and security concepts.',
+                    'icon': 'fas fa-network-wired',
+                },
+                {
+                    'title': 'Agile Foundations',
+                    'subtitle': 'Agile Methodology',
+                    'description': 'Understanding of Agile principles, practices, and frameworks.',
+                    'icon': 'fas fa-tasks',
+                },
+                {
+                    'title': 'Software Development Life Cycle',
+                    'subtitle': 'SDLC',
+                    'description': 'Comprehensive understanding of software development processes and methodologies.',
+                    'icon': 'fas fa-code-branch',
+                },
+                {
+                    'title': 'Software Design: From Requirements to Release',
+                    'subtitle': 'Software Engineering',
+                    'description': 'End-to-end software design and development process.',
+                    'icon': 'fas fa-laptop-code',
+                },
+                {
+                    'title': 'Apache Web Server: Administration',
+                    'subtitle': 'Web Server Management',
+                    'description': 'Skills in installing, configuring, and maintaining Apache web servers.',
+                    'icon': 'fab fa-ubuntu',
+                },
+                {
+                    'title': 'NoSQL Essential Training',
+                    'subtitle': 'Database Technologies',
+                    'description': 'Fundamentals of NoSQL databases and their use cases.',
+                    'icon': 'fas fa-database',
+                },
+                {
+                    'title': 'AWS Knowledge – Cloud Essentials',
                     'subtitle': 'Amazon Web Services',
-                    'description': 'Demonstrated expertise in designing distributed systems on AWS.',
+                    'description': 'Core AWS services and cloud computing concepts.',
                     'icon': 'fab fa-aws',
                 },
                 {
-                    'title': 'Certified Kubernetes Administrator',
-                    'subtitle': 'Cloud Native Computing Foundation',
-                    'description': 'Validated skills in Kubernetes cluster management and application deployment.',
-                    'icon': 'fas fa-dharmachakra',
+                    'title': 'AWS Educate – Getting Started with Storage',
+                    'subtitle': 'AWS Educate',
+                    'description': 'Fundamentals of cloud storage solutions on AWS.',
+                    'icon': 'fas fa-hdd',
                 },
                 {
-                    'title': 'Microsoft Certified: Azure Administrator',
-                    'subtitle': 'Microsoft',
-                    'description': 'Proven ability to manage Azure resources and implement security controls.',
-                    'icon': 'fab fa-microsoft',
+                    'title': 'AWS Educate – Getting Started with Compute',
+                    'subtitle': 'AWS Educate',
+                    'description': 'Introduction to AWS compute services and their applications.',
+                    'icon': 'fas fa-server',
                 },
                 {
-                    'title': 'Certified Information Systems Security Professional',
-                    'subtitle': '(ISC)²',
-                    'description': 'Validated expertise in IT security and risk management.',
+                    'title': 'AWS Educate – Getting Started with Networking',
+                    'subtitle': 'AWS Educate',
+                    'description': 'Networking fundamentals in AWS cloud environment.',
+                    'icon': 'fas fa-network-wired',
+                },
+                {
+                    'title': 'AWS Educate – Getting Started with Databases',
+                    'subtitle': 'AWS Educate',
+                    'description': 'Overview of database services available on AWS.',
+                    'icon': 'fas fa-database',
+                },
+                {
+                    'title': 'AWS Educate – Getting Started with Security',
+                    'subtitle': 'AWS Educate',
+                    'description': 'Security best practices and services in AWS.',
                     'icon': 'fas fa-shield-alt',
                 },
                 {
-                    'title': 'Google Cloud Professional',
-                    'subtitle': 'Google Cloud',
-                    'description': 'Demonstrated ability to design and manage Google Cloud solutions.',
-                    'icon': 'fab fa-google',
+                    'title': 'AWS Educate – Getting Started with Serverless',
+                    'subtitle': 'AWS Educate',
+                    'description': 'Introduction to serverless computing with AWS Lambda.',
+                    'icon': 'fas fa-bolt',
+                },
+                {
+                    'title': 'AWS Educate – Getting Started with Cloud Operations',
+                    'subtitle': 'AWS Educate',
+                    'description': 'Managing and operating applications in the AWS Cloud.',
+                    'icon': 'fas fa-cloud',
+                },
+                {
+                    'title': 'AWS Cloud Quest – Cloud Practitioner',
+                    'subtitle': 'AWS Training',
+                    'description': 'Hands-on training for AWS Cloud Practitioner certification.',
+                    'icon': 'fab fa-aws',
                 }
             ] %}
             

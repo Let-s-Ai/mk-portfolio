@@ -1,83 +1,208 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <h2 class="section-title">Work Experience</h2>
-        <div class="timeline">
-            <!-- Senior System Engineer -->
-            <div class="timeline-item">
-                <span class="timeline-year">2023 - Present</span>
-                <h3>Senior System Engineer</h3>
-                <h4>Tech Solutions Inc.</h4>
-                <ul>
-                    <li>Led a team of 5 engineers in developing and maintaining critical infrastructure</li>
-                    <li>Implemented CI/CD pipelines reducing deployment time by 60%</li>
-                    <li>Designed and deployed scalable cloud solutions on AWS and Azure</li>
-                </ul>
-            </div>
-            
-            <!-- System Engineer -->
-            <div class="timeline-item">
-                <span class="timeline-year">2020 - 2023</span>
-                <h3>System Engineer</h3>
-                <h4>Digital Innovations LLC</h4>
-                <ul>
-                    <li>Automated routine tasks using Python and PowerShell, saving 20+ hours per week</li>
-                    <li>Managed and maintained Windows/Linux server infrastructure</li>
-                    <li>Implemented security best practices and conducted regular security audits</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<div class="container mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-primary mb-4">Work Experience</h1>
+        <div class="w-24 h-1 bg-primary mx-auto"></div>
+    </div>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <span class="timeline-year">2016 - 2020</span>
-                <h3>Bachelor of Science in Computer Science</h3>
-                <h4>Tech University</h4>
-                <p>GPA: 3.8/4.0</p>
-                <p>Relevant Coursework: Algorithms, Data Structures, Computer Networks, Database Systems</p>
-            </div>
+    <!-- Timeline -->
+    <div class="relative max-w-5xl mx-auto px-4">
+        <!-- Timeline line -->
+        <div
+            class="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-primary via-primary to-primary/20">
         </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Programming Languages</h3>
-                <ul>
-                    <li>Python</li>
-                    <li>JavaScript</li>
-                    <li>PowerShell</li>
-                    <li>SQL</li>
-                </ul>
+        <!-- Timeline Items -->
+        <div class="space-y-16">
+
+            <!-- EPAM - Junior System Engineer -->
+            <div class="relative group">
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <div class="md:w-1/2 md:pr-16 text-right">
+                        <div
+                            class="bg-dark-card p-6 rounded-lg shadow-lg border-l-4 border-primary relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                            <div class="flex items-center justify-end mb-2">
+                                <h2 class="text-2xl font-bold text-white">Junior System Engineer</h2>
+                            </div>
+                            <h3 class="text-xl text-primary font-medium mb-1">EPAM (SAP Project)</h3>
+                            <p class="text-gray-400 text-sm font-medium tracking-wide mb-4">2024 - Present</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Kubernetes
+                                        Cluster Management</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>GCP
+                                        Infrastructure Operations</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Jenkins CI/CD
+                                        Pipeline Maintenance</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>GitHub &
+                                        GitHub Actions Integration</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Automation of
+                                        Deployment Workflows</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Collaboration
+                                        with Development and DevOps Teams</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden md:flex items-center justify-center md:w-1/2 h-full absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-6 h-6 rounded-full bg-primary flex-shrink-0"></div>
+                    </div>
+                    <div class="md:hidden mt-4 w-full">
+                        <div class="w-6 h-6 rounded-full bg-primary mx-auto"></div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="skill-category">
-                <h3>Technologies</h3>
-                <ul>
-                    <li>Docker & Kubernetes</li>
-                    <li>AWS & Azure</li>
-                    <li>CI/CD Pipelines</li>
-                    <li>Linux/Windows Server</li>
-                </ul>
+
+            <!-- System Administrator - PAINTYOURLIFE -->
+            <div class="relative group">
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <div class="hidden md:block md:w-1/2"></div>
+                    <div
+                        class="hidden md:flex items-center justify-center md:w-1/2 h-full absolute left-1/2 transform -translate-x-1/2">
+                        <div
+                            class="w-5 h-5 rounded-full bg-primary ring-4 ring-dark-card flex-shrink-0 transform group-hover:scale-125 transition-transform duration-300">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-16">
+                        <div
+                            class="bg-dark-card p-6 rounded-lg shadow-lg border-r-4 border-primary relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                            <div class="flex items-center mb-2">
+                                <h2 class="text-2xl font-bold text-white">System Administrator</h2>
+                            </div>
+                            <h3 class="text-xl text-primary font-medium mb-1">PAINTYOURLIFE</h3>
+                            <p class="text-gray-400 text-sm font-medium tracking-wide mb-4">2023 - 2024</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Server
+                                        Administration</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Network
+                                        Management</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>System
+                                        Configuration</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Security
+                                        Implementation</span></li>
+                                <li class="flex items-start"><span
+                                        class="text-primary mr-2">•</span><span>Troubleshooting and Optimization</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:hidden mt-4 w-full">
+                        <div class="w-6 h-6 rounded-full bg-primary mx-auto"></div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="skill-category">
-                <h3>Tools</h3>
-                <ul>
-                    <li>Git & GitHub</li>
-                    <li>Jenkins</li>
-                    <li>Ansible</li>
-                    <li>Terraform</li>
-                </ul>
+
+            <!-- Help Desk Support - PAINTYOURLIFE -->
+            <div class="relative group">
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <div class="md:w-1/2 md:pr-16 text-right">
+                        <div
+                            class="bg-dark-card p-6 rounded-lg shadow-lg border-l-4 border-primary relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                            <div class="flex items-center justify-end mb-2">
+                                <h2 class="text-2xl font-bold text-white">Help Desk Support</h2>
+                            </div>
+                            <h3 class="text-xl text-primary font-medium mb-1">PAINTYOURLIFE</h3>
+                            <p class="text-gray-400 text-sm font-medium tracking-wide mb-4">2022 - 2023</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Ticket
+                                        Management</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Remote
+                                        Troubleshooting</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>User
+                                        Assistance and IT Query Handling</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Incident
+                                        Resolution</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Customer
+                                        Service</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden md:flex items-center justify-center md:w-1/2 h-full absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-6 h-6 rounded-full bg-primary flex-shrink-0"></div>
+                    </div>
+                    <div class="md:hidden mt-4 w-full">
+                        <div class="w-6 h-6 rounded-full bg-primary mx-auto"></div>
+                    </div>
+                </div>
             </div>
+
+            <!-- IT Support - REDSOURCE -->
+            <div class="relative group">
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <div class="hidden md:block md:w-1/2"></div>
+                    <div
+                        class="hidden md:flex items-center justify-center md:w-1/2 h-full absolute left-1/2 transform -translate-x-1/2">
+                        <div
+                            class="w-5 h-5 rounded-full bg-primary ring-4 ring-dark-card flex-shrink-0 transform group-hover:scale-125 transition-transform duration-300">
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pl-16">
+                        <div
+                            class="bg-dark-card p-6 rounded-lg shadow-lg border-r-4 border-primary relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                            <div class="flex items-center mb-2">
+                                <h2 class="text-2xl font-bold text-white">IT Support</h2>
+                            </div>
+                            <h3 class="text-xl text-primary font-medium mb-1">REDSOURCE</h3>
+                            <p class="text-gray-400 text-sm font-medium tracking-wide mb-4">2022 - 2022</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Computer
+                                        Systems Maintenance</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Issue
+                                        Diagnosis and Resolution</span></li>
+                                <li class="flex items-start"><span
+                                        class="text-primary mr-2">•</span><span>Cross-functional Collaboration</span>
+                                </li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>End-user
+                                        Training Experience</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Timely Help
+                                        Desk Ticket Response</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:hidden mt-4 w-full">
+                        <div class="w-6 h-6 rounded-full bg-primary mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IT Support - NEWVISION -->
+            <div class="relative group">
+                <div class="flex flex-col md:flex-row items-start md:items-center">
+                    <div class="md:w-1/2 md:pr-16 text-right">
+                        <div
+                            class="bg-dark-card p-6 rounded-lg shadow-lg border-l-4 border-primary relative transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                            <div class="flex items-center justify-end mb-2">
+                                <h2 class="text-2xl font-bold text-white">IT Support</h2>
+                            </div>
+                            <h3 class="text-xl text-primary font-medium mb-1">NEWVISION</h3>
+                            <p class="text-gray-400 text-sm font-medium tracking-wide mb-4">2021 - 2022</p>
+                            <ul class="space-y-2 text-gray-300">
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Issue
+                                        Diagnosis and Resolution</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Strong
+                                        Troubleshooting Skills</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Computer
+                                        Systems Maintenance</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Collaboration
+                                        with Cross-functional Teams</span></li>
+                                <li class="flex items-start"><span class="text-primary mr-2">•</span><span>Documentation
+                                        Proficiency</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div
+                        class="hidden md:flex items-center justify-center md:w-1/2 h-full absolute left-1/2 transform -translate-x-1/2">
+                        <div class="w-6 h-6 rounded-full bg-primary flex-shrink-0"></div>
+                    </div>
+                    <div class="md:hidden mt-4 w-full">
+                        <div class="w-6 h-6 rounded-full bg-primary mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
-{% endblock %}
+    </div>
+
+    {% endblock %}
