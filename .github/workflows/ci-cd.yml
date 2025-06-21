@@ -7,8 +7,8 @@ on:
     branches: [ main ]
 
 env:
-  REGISTRY: merabi14
-  IMAGE_NAME: ${{ github.repository }}
+  REGISTRY: docker.io
+  IMAGE_NAME: merabi14/mk-portfolio
 
 jobs:
   build-and-push:
@@ -46,7 +46,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.IMAGE_NAME }}
           tags: |
             type=raw,value=latest
             type=sha,format=long
