@@ -17,9 +17,74 @@ This project serves as a personal portfolio and CV hub, tailored for cybersecuri
   - Clearly structured content sections for easy readability
 
 - **Technologies**:
-  - Python + Flask (backend)
-  - HTML5, CSS3 (with optional Tailwind for styling)
-  - Jinja2 templating
+  - Python + Flask Application Deployment with Terraform and Kubernetes
+
+This project sets up a Flask application on AWS EC2 using Terraform and deploys it using Kubernetes (k3s).
+
+## Prerequisites
+
+1. [Terraform](https://www.terraform.io/downloads.html) installed on your local machine
+2. [AWS CLI](https://aws.amazon.com/cli/) configured with appropriate credentials
+3. An SSH key pair (public/private key) for EC2 instance access
+4. Docker Hub account (to pull your application image)
+
+## Setup Instructions
+
+1. **Prepare SSH Key Pair**
+   ```bash
+   # Generate a new SSH key pair if you don't have one
+   ssh-keygen -t rsa -b 4096 -f id_rsa
+   ```
+
+2. **Initialize Terraform**
+   ```bash
+   terraform init
+   ```
+
+3. **Review the Terraform Plan**
+   ```bash
+   terraform plan
+   ```
+
+4. **Apply the Terraform Configuration**
+   ```bash
+   terraform apply
+   ```
+
+5. **Access Your Application**
+   After the deployment completes, Terraform will output the public IP address of your EC2 instance. Access your application at:
+   ```
+   http://<EC2_PUBLIC_IP>
+   ```
+
+## Infrastructure Details
+
+- **EC2 Instance**: t2.micro (free tier eligible)
+- **Networking**: VPC with public subnet, internet gateway, and route tables
+- **Security**: Security group allowing HTTP (80) and SSH (22) access
+- **Kubernetes**: k3s lightweight Kubernetes distribution
+- **Application**: Deployed as a Kubernetes pod with NodePort service and Ingress
+
+## Files
+
+- `main.tf`: Main Terraform configuration
+- `prepareEC2.bash`: Bootstrap script for EC2 instance
+- `pod.yaml`: Kubernetes pod and service definitions
+- `ingress.yaml`: Kubernetes ingress configuration
+
+## Cleanup
+
+To destroy all created resources:
+
+```bash
+terraform destroy
+```
+
+## Notes
+
+- The EC2 instance will be accessible via SSH using the key pair specified in the Terraform configuration
+- The Kubernetes dashboard is not enabled by default for security reasons
+- All resources are created in the us-east-1 region by default (can be changed in `main.tf`)
 
 ## Highlights
 

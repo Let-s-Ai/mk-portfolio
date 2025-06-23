@@ -8,6 +8,7 @@ spec:
   containers:
   - name: flask-container
     image: merabi14/mk-portfolio:latest
+    imagePullPolicy: Always
     ports:
     - containerPort: 5000
 

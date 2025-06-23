@@ -1,19 +1,21 @@
-name: Docker Build and Push
+name: Docker Build and Deploy
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+ 
 env:
   REGISTRY: docker.io
   IMAGE_NAME: merabi14/mk-portfolio
+  AWS_REGION: us-east-1
 
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-      
+    
+    outputs:
+      image_tag: ${{ steps.meta.outputs.tags }}
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -61,3 +63,40 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+          
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.5.7
+          
+      - name: Terraform Init
+        working-directory: ./ec2
+        run: |
+          terraform init -input=false
+          
+      - name: Destroy EC2 Instance
+        working-directory: ./ec2
+        continue-on-error: true
+        run: |
+            terraform destroy -auto-approve -target="aws_instance.flask_app" 
+      
+          
+      - name: Apply EC2 Instance
+        working-directory: ./ec2
+        run: |
+          terraform apply -auto-approve -input=false
