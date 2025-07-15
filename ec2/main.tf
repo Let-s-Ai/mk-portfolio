@@ -50,7 +50,6 @@ resource "aws_security_group" "allow_web" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-
   ingress {
     description = "SSH"
     from_port   = 22
@@ -59,6 +58,13 @@ resource "aws_security_group" "allow_web" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    description = "Monitoring"
+    from_port   = 45876
+    to_port     = 45876
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   egress {
     from_port   = 0
